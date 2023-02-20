@@ -8,6 +8,10 @@ import com.loginservice.modules.Users;
 @Repository
 public interface UserRepositry extends JpaRepository<Users, Integer>{
 
-	Users findByName(String name);
+	//Users findByName(String name,String password);
+
+	//Users findByNameAndPassword(String name, String password);
+
+	Users findByNameAndPassword(String name, String password);
 
 }

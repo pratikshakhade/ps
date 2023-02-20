@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.loginservice.modules.Users;
@@ -27,13 +28,12 @@ public class UserController {
 	
 	@PostMapping("/save")
 	public Users saveUsers(@RequestBody Users u ) {
-		
 		return service.saveUser(u);
 	}
 	
 	@GetMapping("/userbyname")
-	public Users saveUsers(@PathVariable String name) {
-		
-		return service.saveUser(name);
+	public Users saveUsers(@RequestParam String name, @RequestParam String password) {
+		System.out.println("name"+password);
+		return service.saveUser(name,password);
 	}
 }

@@ -13,12 +13,14 @@ public class UserService {
 	UserRepositry repositry;
 	
    public Users saveUser(Users u ) {
+	   u.setRole("user");
 	   return repositry.save(u);
    }
 	
-   public Users saveUser(String name ) {
-	   return repositry.findByName(name);
+   public Users saveUser(String name, String password ) {
+	   return repositry.findByNameAndPassword(name,password);
    }
+   
    
    
 }
