@@ -2,6 +2,7 @@ package com.loginservice.controller;
 
 import org.hibernate.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import com.loginservice.modules.Users;
 import com.loginservice.service.UserService;
 
 @RestController
+@CrossOrigin
 public class UserController {
 
 	@Autowired
@@ -28,12 +30,13 @@ public class UserController {
 	
 	@PostMapping("/save")
 	public Users saveUsers(@RequestBody Users u ) {
+		System.out.println("user ::::"+u);
 		return service.saveUser(u);
 	}
 	
 	@GetMapping("/userbyname")
 	public Users saveUsers(@RequestParam String name, @RequestParam String password) {
 		System.out.println("name"+password);
-		return service.saveUser(name,password);
+		return service.getUser(name,password);
 	}
 }

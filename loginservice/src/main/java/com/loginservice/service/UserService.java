@@ -17,7 +17,7 @@ public class UserService {
 	   return repositry.save(u);
    }
 	
-   public Users saveUser(String name, String password ) {
+   public Users getUser(String name, String password ) {
 	   return repositry.findByNameAndPassword(name,password);
    }
    

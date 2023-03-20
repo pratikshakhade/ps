@@ -7,6 +7,7 @@ import com.loginservice.modules.HotelOwnerUser;
 import com.loginservice.modules.Users;
 import com.loginservice.repositry.HotelOwnerRepositry;
 
+
 @Service
 public class HotelOwnerService {
 
